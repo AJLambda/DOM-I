@@ -42,15 +42,22 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 console.log(logo); 
 
-//Nav bar items
+//Nav
+//Class selector
+const navClass = document.querySelectorAll('nav')
+console.log("Nav: ", navClass);
+//Anchor selector
 const navText = document.querySelectorAll('a');
-navText[0].textContent = siteContent['nav']['nav-item-1'];
-navText[1].textContent = siteContent['nav']['nav-item-2'];
-navText[2].textContent = siteContent['nav']['nav-item-3'];
-navText[3].textContent = siteContent['nav']['nav-item-4'];
-navText[4].textContent = siteContent['nav']['nav-item-5'];
-navText[5].textContent = siteContent['nav']['nav-item-6'];
 console.log("Nav: ", navText);
+
+  //Item content
+  navText[0].textContent = siteContent['nav']['nav-item-1'];
+  navText[1].textContent = siteContent['nav']['nav-item-2'];
+  navText[2].textContent = siteContent['nav']['nav-item-3'];
+  navText[3].textContent = siteContent['nav']['nav-item-4'];
+  navText[4].textContent = siteContent['nav']['nav-item-5'];
+  navText[5].textContent = siteContent['nav']['nav-item-6'];
+
 
 
 //Cta
