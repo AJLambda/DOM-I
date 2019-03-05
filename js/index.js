@@ -40,15 +40,19 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
-console.log(logo); 
 
 //Nav
 //Class selector
 const navClass = document.querySelectorAll('nav')
-console.log("Nav: ", navClass);
 //Anchor selector
 const navText = document.querySelectorAll('a');
-console.log("Nav: ", navText);
+//change all nav text to green
+for (let i = 0; i < navText.length; i++) {
+  navText[i].style.color = "green";
+}
+/* or change all nav text to green this way
+navText.forEach ((currentValue) => currentValue.style.color = 'green')
+*/
 
   //Item content
   navText[0].textContent = siteContent['nav']['nav-item-1'];
@@ -58,7 +62,12 @@ console.log("Nav: ", navText);
   navText[4].textContent = siteContent['nav']['nav-item-5'];
   navText[5].textContent = siteContent['nav']['nav-item-6'];
 
+//create two new elements
+const newAnchor = document.createElement('a');
+newAnchor.textContent = "Append";
 
+//append new elements
+navText.appendChild(newAnchor);
 
 //Cta
 //Class selector
@@ -79,7 +88,6 @@ console.log("Cta: ", ctaClass);
   const ctaImg = document.querySelector("#cta-img");
   ctaImg.src= siteContent["cta"]["img-src"];
   console.log(ctaImg);
-
 
 //Main-content 
 //Class selector
@@ -111,8 +119,6 @@ const middleImg = document.querySelector('#middle-img');
   middleImg.src = siteContent["main-content"]["middle-img-src"];
   console.log(middleImg);
 
-
-
 //Contact
 //Class selector
 const contactClass = document.querySelectorAll('.contact')
@@ -129,7 +135,6 @@ const contactParagraphs = document.querySelectorAll('.contact p')
   contactParagraphs[0].textContent = siteContent['contact']['address']
   contactParagraphs[1].textContent = siteContent['contact']['phone']
   contactParagraphs[2].textContent = siteContent['contact']['email']
-
 
 //Footer
 //Content selector
