@@ -46,6 +46,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 const navClass = document.querySelectorAll('nav')
 //Anchor selector
 const navText = document.querySelectorAll('a');
+
 //change all nav text to green
 for (let i = 0; i < navText.length; i++) {
   navText[i].style.color = "green";
@@ -63,11 +64,20 @@ navText.forEach ((currentValue) => currentValue.style.color = 'green')
   navText[5].textContent = siteContent['nav']['nav-item-6'];
 
 //create two new elements
-const newAnchor = document.createElement('a');
-newAnchor.textContent = "Append";
+let firstAnchor = document.createElement('a');
+firstAnchor.href = '#';
+firstAnchor.textContent = 'First';
+firstAnchor.style.color = 'green';
+
+let lastAnchor = document.createElement('a')
+lastAnchor.href = '#';
+lastAnchor.textContent = 'Last';
+lastAnchor.style.color = 'green';
 
 //append new elements
-navText.appendChild(newAnchor);
+
+navText.appendChild(firstAnchor);
+navText.prepend(firstAnchor);
 
 //Cta
 //Class selector
