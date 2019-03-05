@@ -63,22 +63,6 @@ navText.forEach ((currentValue) => currentValue.style.color = 'green')
   navText[4].textContent = siteContent['nav']['nav-item-5'];
   navText[5].textContent = siteContent['nav']['nav-item-6'];
 
-//create two new elements
-let firstAnchor = document.createElement('a');
-firstAnchor.href = '#';
-firstAnchor.textContent = 'First';
-firstAnchor.style.color = 'green';
-
-let lastAnchor = document.createElement('a')
-lastAnchor.href = '#';
-lastAnchor.textContent = 'Last';
-lastAnchor.style.color = 'green';
-
-//append new elements
-
-navText.appendChild(firstAnchor);
-navText.prepend(firstAnchor);
-
 //Cta
 //Class selector
 const ctaClass = document.querySelectorAll('.cta')
@@ -153,7 +137,23 @@ const footerParagraphs = document.querySelector('footer p')
   //Content
   footerParagraphs.textContent = siteContent['footer']['copyright']
 
+ 
+//create two new elements
+const navBar = document.querySelector ('nav');
 
+const firstAnchor = document.createElement('a');
+firstAnchor.href = '#';
+firstAnchor.textContent = 'First';
+firstAnchor.style.color = 'green';
+
+const lastAnchor = document.createElement('a')
+lastAnchor.href = '#';
+lastAnchor.textContent = 'Last';
+lastAnchor.style.color = 'green';
+
+//append new elements
+navBar.append(firstAnchor);
+navBar.prepend(lastAnchor);
 
 
 
