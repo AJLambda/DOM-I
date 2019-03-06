@@ -92,7 +92,9 @@ const mainHeading = document.querySelectorAll('.main-content h4');
 const mainParagraphs= document.querySelectorAll('.main-content p');
 //Image selector
 const middleImg = document.querySelector('#middle-img');
+/*
 
+//without iteration
   //Heading
   mainHeading[0].textContent = siteContent['main-content']['features-h4'];
   mainHeading[1].textContent = siteContent['main-content']['about-h4'];
@@ -109,7 +111,24 @@ const middleImg = document.querySelector('#middle-img');
 
   //Img
   middleImg.src = siteContent["main-content"]["middle-img-src"];
- 
+ */
+
+//with iteration using switch
+for(let i = 0; i < mainParagraphs.length; i++){
+  let section = '';
+  switch(i){
+    case 0: section = 'features'
+    case 1: section = 'about'
+    case 2: section = 'services'
+    case 3: section = 'product'
+    case 4: section = 'vision'
+  }
+  mainHeading[i].textContent = siteContent["main-content"][`${section}-h4`]
+  mainParagraphs[i].textContent = siteContent["main-content"][`${section}-content`]
+
+  //Img
+  middleImg.src = siteContent["main-content"]["middle-img-src"];
+}
 
 //Contact
 //Class selector
